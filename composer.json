@@ -1,5 +1,5 @@
 {
-    "name": "mvc php",
+    "name": "e14/mvc-php",
     "license": "MIT",
     "authors": [
         {
@@ -8,5 +8,13 @@
     ],
     "require": {
         "mistic100/randomcolor": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Route\\": "router/",
+            "Controller\\": "controllers/",
+            "Model\\": "models/",
+            "View\\": "views/"
+        }
     }
 }
