@@ -1,0 +1,12 @@
+{
+    "name": "mvc php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ismail edaraz"
+        }
+    ],
+    "require": {
+        "mistic100/randomcolor": "^1.0"
+    }
+}
