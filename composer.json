@@ -11,10 +11,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Route\\": "router/",
-            "Controller\\": "controllers/",
-            "Model\\": "models/",
-            "View\\": "views/"
+            "Router\\": "Router/",
+            "Exceptions\\": "Exceptions/"
         }
     }
 }
