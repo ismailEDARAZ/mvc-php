@@ -13,7 +13,9 @@
             "Router\\": "router/",
             "Exceptions\\": "exceptions/",
             "Controllers\\": "controllers/",
-            "Core\\": "core/"
+            "Core\\": "core/",
+            "Models\\": "models/",
+            "Config\\": "config/"
         }
     }
 }

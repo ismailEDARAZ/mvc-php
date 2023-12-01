@@ -3,12 +3,14 @@
 namespace Controllers;
 
 use Core\View;
+use Models\User;
 
 class HomeController 
 {
     public function index()
     {
-        return View::make('index');
+        $users = (new User())->all('users');
+        return View::make('index', compact('users'));
     }
 
     public function contact()
