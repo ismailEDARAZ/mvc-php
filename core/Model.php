@@ -1,6 +1,6 @@
 <?php
 
-namespace Models;
+namespace Core;
 
 use Config\DB;
 use PDO;
@@ -9,6 +9,7 @@ use PDOException;
 class Model{
 
     protected PDO $pdo;
+    protected $table;
 
     public function __construct()
     {
@@ -19,17 +20,17 @@ class Model{
         }
     }
 
-    public function getOne(string $table, int $id)
+    public function where($key,$value)
     {
-        $stat = $this->pdo->prepare("SELECT * FROM $table WHERE id=?");
-        $stat->execute([$id]);
+        $stat = $this->pdo->prepare("SELECT * FROM $this->table WHERE $key=?");
+        $stat->execute([$value]);
 
         return $stat->fetch();
     }
 
-    public function all(string $table)
+    public function all()
     {
-        $stat = $this->pdo->query("SELECT * FROM $table");
+        $stat = $this->pdo->query("SELECT * FROM $this->table");
 
         return $stat->fetchAll();
     }
