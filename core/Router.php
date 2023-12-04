@@ -1,6 +1,6 @@
 <?php
 
-namespace Router;
+namespace Core;
 
 use Exceptions\RouteNotFoundException;
 
@@ -19,6 +19,14 @@ class Router
 
     public function post(string $path, callable|array $action) {
         $this->register($path, $action, 'POST');
+    }
+
+    public function put(string $path, callable|array $action) {
+        $this->register($path, $action, 'POST');
+    }
+
+    public function delete(string $path, callable|array $action) {
+        $this->register($path, $action, 'DELETE');
     }
 
     public function resolve(string $uri, string $method): mixed

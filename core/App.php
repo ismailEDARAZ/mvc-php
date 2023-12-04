@@ -3,7 +3,7 @@
 namespace Core;
 
 use Exceptions\RouteNotFoundException;
-use Router\Router;
+use Core\Router;
 
 class App 
 {
