@@ -20,18 +20,29 @@ class Model{
         }
     }
 
-    public function where($key,$value)
+    public static function where($table,$key,$value)
     {
-        $stat = $this->pdo->prepare("SELECT * FROM $this->table WHERE $key=?");
+        $instance = new self();
+        return $instance->getWhere($table,$key,$value);
+    }
+
+    public static function all(string $table)
+    {
+        $instance = new self();
+        return $instance->getAll($table);
+    }
+
+    public function getAll($table)
+    {
+        $stat = $this->pdo->query("SELECT * FROM $table");
+        return $stat->fetchAll();
+    }
+
+    public function getWhere($table,$key,$value)
+    {
+        $stat = $this->pdo->prepare("SELECT * FROM $table WHERE $key=?");
         $stat->execute([$value]);
 
         return $stat->fetch();
-    }
-
-    public function all()
-    {
-        $stat = $this->pdo->query("SELECT * FROM $this->table");
-
-        return $stat->fetchAll();
     }
 }
